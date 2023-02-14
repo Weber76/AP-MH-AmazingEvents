@@ -18,7 +18,7 @@
     <title>Home</title>
   </head>
   <body>
-    <header class="d-flex justify-content-between align-items-center ms-2 me-2">
+    <header class="align-items-center ps-2 pe-2">
       <aside class="aside-logo">
         <img
           class="img-logo"
@@ -26,51 +26,85 @@
           alt="Logo MDHL"
         />
       </aside>
-      <nav class="nav-bar d-flex align-items-center">
+      <nav class="nav-bar align-items-center">
         <ul class="nav-list">
-          <li class="btn btn-primary navi-link visit" role="button">Home</li>
-          <li class="btn btn-primary navi-link" role="button">
+          <li class="btn btn-secondary navi-link visit">Home</li>
+          <li class="btn btn-primary navi-link">
             <a href="upcoming.html">Upcoming Events</a>
           </li>
-          <li class="btn btn-primary navi-link" role="button">
+          <li class="btn btn-primary navi-link">
             <a href="past.html">Past Events</a>
           </li>
-          <li class="btn btn-primary navi-link" role="button">
+          <li class="btn btn-primary navi-link">
             <a href="contact.html">Contact</a>
           </li>
-          <li class="btn btn-primary navi-link" role="button">
-            <a href="stats">Stats</a>
+          <li class="btn btn-primary navi-link">
+            <a href="stats.html">Stats</a>
           </li>
         </ul>
       </nav>
+      <nav class="nav-down">
+        <button
+          class="nav-bar-button btn btn-primary dropdown-toggle bi bi-list"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ></button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item visiting" href="#">Home</a></li>
+          <li>
+            <a class="dropdown-item" href="upcoming.html">Upcoming Events</a>
+          </li>
+          <li><a class="dropdown-item" href="past.html">Past Events</a></li>
+          <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+          <li><a class="dropdown-item" href="stats.html">Stats</a></li>
+        </ul>
+      </nav>
     </header>
-    <aside class="d-flex justify-content-between">
-      <a href="#">&lt;</a>
-      <p>Home</p>
-      <a href="#">&gt;</a>
+    <aside class="d-flex justify-content-between mt-4 mb-4 ms-2 me-2">
+      <a href="#" class="btn btn-primary">&lt;</a>
+      <p class="navi-here">Home</p>
+      <a href="#" class="btn btn-primary">&gt;</a>
     </aside>
     <main>
-      <form action="">
+      <form
+        class="d-flex justify-content-between mt-4 mb-4 ms-2 me-2 searching"
+      >
         <fieldset class="category">
-          <input type="checkbox" id="cinema" name="category_cinema" />
-          <label for="cinema">Cinema</label>
-          <input type="checkbox" id="costume" name="category_costume" />
-          <label for="costume">Costume Party</label>
-          <input type="checkbox" id="food" name="category_food" />
-          <label for="food">Food Fair</label>
-          <input type="checkbox" id="marathon" name="category_marathon" />
-          <label for="marathon">Marathon</label>
-          <input type="checkbox" id="museum" name="category_museum" />
-          <label for="museum">Museum Tour</label>
-          <input type="checkbox" id="music" name="category_music" />
-          <label for="music">Music Concert</label>
+          <ul class="d-flex flex-wrap">
+            <li>
+              <input type="checkbox" id="cinema" name="category_cinema" />
+              <label for="cinema">Cinema</label>
+            </li>
+            <li>
+              <input type="checkbox" id="costume" name="category_costume" />
+              <label for="costume">Costume Party</label>
+            </li>
+            <li>
+              <input type="checkbox" id="food" name="category_food" />
+              <label for="food">Food Fair</label>
+            </li>
+            <li>
+              <input type="checkbox" id="marathon" name="category_marathon" />
+              <label for="marathon">Marathon</label>
+            </li>
+            <li>
+              <input type="checkbox" id="museum" name="category_museum" />
+              <label for="museum">Museum Tour</label>
+            </li>
+            <li>
+              <input type="checkbox" id="music" name="category_music" />
+              <label for="music">Music Concert</label>
+            </li>
+          </ul>
         </fieldset>
-        <fieldset>
-          <input type="text" />
-          <button type="button"><span class="bi bi-search"></span></button>
+        <fieldset class="text-search">
+          <input class="input-search" type="search" placeholder="Search" />
         </fieldset>
       </form>
-      <article>
+      <article
+        class="d-flex flex-wrap justify-content-evenly mt-4 mb-4 ms-2 me-2"
+      >
         <div class="card">
           <img
             src="./img/cinema.jpg"
@@ -163,24 +197,23 @@
         </div>
       </article>
     </main>
-    <footer>
-      <ul>
+    <footer class="d-flex justify-content-between">
+      <ul class="social d-flex">
         <li>
-          <a href="#"><span class="bi bi-instagram"></span></a>
+          <a href="#"><span class="bi bi-instagram h4"></span></a>
         </li>
         <li>
-          <a href="#"><span class="bi bi-facebook"></span></a>
+          <a href="#"><span class="bi bi-facebook h4"></span></a>
         </li>
         <li>
-          <a href="#"><span class="bi bi-whatsapp"></span></a>
+          <a href="#"><span class="bi bi-whatsapp h4"></span></a>
         </li>
       </ul>
-      <p>Cohort</p>
     </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"
-  ></script>
 </html>

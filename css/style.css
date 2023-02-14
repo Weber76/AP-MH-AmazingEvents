@@ -1,5 +1,17 @@
 header {
-  height: 100px;
+  display: flex;
+  min-height: 100px;
+  background-color: coral;
+  justify-content: space-between;
+}
+
+.aside-logo {
+  display: block;
+  width: 178px;
+  height: 56px;
+  background-color: rgb(248, 192, 172);
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .img-logo {
@@ -10,16 +22,12 @@ header {
   margin: 0px;
 }
 
-.aside-logo {
-  display: block;
-  width: 178px;
-  height: 56px;
-  background-color: rgb(250, 120, 200);
-  border: 2px solid black;
-  border-radius: 10px;
+.nav-bar {
+  display: flex;
 }
 
-.nav-bar {
+.nav-down {
+  display: none;
 }
 
 .nav-list {
@@ -27,18 +35,89 @@ header {
   margin: 0px;
 }
 
-.navi-link {
-}
-
-.navi-link a{
+.navi-link a {
   text-decoration: none;
   color: white;
-
 }
 
-.hidden {
+.visiting {
+  background-color: gray;
 }
 
-.card{
-  width: 18rem;
+.navi-here {
+  font-size: large;
+  padding: 6px 0px 0px 0px;
+  margin: 0px;
+}
+
+.searching {
+  flex: auto;
+}
+
+ul.d-flex {
+  padding-left: 0px;
+}
+
+ul.d-flex li {
+  list-style-type: none;
+  margin: 3px;
+}
+
+.text-search {
+  flex-shrink: 0;
+  width: 190px;
+}
+
+.input-search {
+  width: auto;
+}
+
+.card {
+  width: 250px;
+  margin: 10px;
+}
+
+.social {
+  list-style-type: none;
+}
+
+ul.social li {
+  margin: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+@media screen and (min-width: 511px) and (max-width: 690px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .aside-logo {
+    margin: 5px;
+  }
+
+  .nav-bar {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  header {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .nav-down {
+    display: block;
+    margin: 5px;
+  }
+
+  .aside-logo {
+    margin: 5px;
+  }
 }

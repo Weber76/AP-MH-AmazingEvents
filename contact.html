@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+   >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+   >
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Contact</title>
+  </head>
+  <body>
+    <header class="align-items-center ps-2 pe-2">
+      <aside class="aside-logo">
+        <img
+          class="img-logo"
+          src="./img/logo_amazing_events.png"
+          alt="Logo MDHL"
+       >
+      </aside>
+      <nav class="nav-bar align-items-center">
+        <ul class="nav-list">
+          <li class="btn btn-primary navi-link">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="btn btn-primary navi-link">
+            <a href="upcoming.html">Upcoming Events</a>
+          </li>
+          <li class="btn btn-primary navi-link">
+            <a href="past.html">Past Events</a>
+          </li>
+          <li class="btn btn-secondary navi-link visit">Contact</li>
+          <li class="btn btn-primary navi-link">
+            <a href="stats.html">Stats</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="nav-down">
+        <button
+          class="nav-bar-button btn btn-primary dropdown-toggle bi bi-list"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ></button>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="upcoming.html">Upcoming Events</a>
+          </li>
+          <li><a class="dropdown-item" href="past.html">Past Events</a></li>
+          <li><a class="dropdown-item visiting" href="#">Contact</a></li>
+          <li><a class="dropdown-item" href="stats.html">Stats</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside class="d-flex justify-content-between mt-4 mb-4 ms-2 me-2">
+      <a href="past.html" class="btn btn-primary">&lt;</a>
+      <p class="navi-here">Contact Us</p>
+      <a href="stats.html" class="btn btn-primary">&gt;</a>
+    </aside>
+    <main>
+      <form action="#" class="contact-form" id="contact-form">
+        <fieldset class="d-flex justify-content-center m-4">
+          <ul class="contact-list">
+            <li>
+              <label for="name">Name:</label>
+              <input type="text" id="name" size="30" name="name">
+            </li>
+            <li>
+              <label for="email">Email:</label>
+              <input type="text" id="email" size="30" name="email">
+            </li>
+            <li class="d-flex">
+              <label for="message" class="message">Message:</label>
+              <textarea
+                form="contact-form"
+                name="text_message"
+                class="text-area"
+                placeholder="Leave a comment here..."
+                id="message"
+                rows="5"
+                cols="32"
+              ></textarea>
+            </li>
+            <li class="d-flex justify-content-end">
+              <button
+                class="btn btn-primary button-contact-submit"
+                type="submit"
+                form="contact-form"
+              >
+                Submit
+              </button>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </main>
+    <footer class="d-flex justify-content-between">
+      <ul class="social d-flex">
+        <li>
+          <a href="#"><span class="bi bi-instagram h4"></span></a>
+        </li>
+        <li>
+          <a href="#"><span class="bi bi-facebook h4"></span></a>
+        </li>
+        <li>
+          <a href="#"><span class="bi bi-whatsapp h4"></span></a>
+        </li>
+      </ul>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -76,6 +76,7 @@ header {
 .aside-hbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 10px;
   margin: 0px;
   color: white;
@@ -92,12 +93,14 @@ header {
   font-size: 24px;
   font-weight: bold;
   text-shadow: 0 0 5px #000000;
+  text-align: center;
 }
 
 .aside-hbar a {
   font-size: 18px;
   font-weight: bold;
   padding-top: 4px;
+  height: 40px;
   --bs-btn-color: #fff;
   --bs-btn-bg: #2f2246;
   --bs-btn-border-color: #2f2246;
@@ -219,7 +222,22 @@ header {
   --bs-btn-disabled-bg: #6c757d;
   --bs-btn-disabled-border-color: #6c757d;
 }
+
 /* Formulario de contacto */
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-field {
+  display: flex;
+  border: 1px solid #ced4da;
+  margin: 24px;
+  padding: 15px 0px;
+  width: 400px;
+  border-radius: 7px;
+}
 
 .contact-list {
   list-style-type: none;
@@ -236,6 +254,32 @@ header {
 
 .contact-list li input {
   max-width: 300px;
+  border: 1px solid #ced4da;
+}
+
+.text-area {
+  width: 260px;
+  height: 130px;
+  margin-top: 10px;
+  margin-left: 4px;
+  resize: none;
+  border: 1px solid #ced4da;
+}
+
+.button-contact-submit {
+  margin-top: 10px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #2f2246;
+  --bs-btn-border-color: #bc4e9e;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #bc4e9e;
+  --bs-btn-hover-border-color: #7e326a;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #7e326a;
+  --bs-btn-active-border-color: #7e326a;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #6c757d;
+  --bs-btn-disabled-border-color: #6c757d;
 }
 
 /* Footer social */
@@ -272,18 +316,6 @@ ul.social li {
 
 ul.social span {
   color: rgb(46, 46, 46);
-}
-
-.text-area {
-  width: 262px;
-  height: 130px;
-  margin-top: 10px;
-  margin-left: 4px;
-  resize: none;
-}
-
-.button-contact-submit {
-  margin-top: 10px;
 }
 
 .main-stats {
@@ -428,5 +460,31 @@ tbody.statistics-body td {
 
   .category {
     width: 100%;
+  }
+
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-list li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-list li input {
+    max-width: 400px;
+    margin: 10px;
+    border: 1px solid #ced4da;
+  }
+
+  .text-area {
+    width: auto;
+    margin: 10px;
+    border: 1px solid #ced4da;
+  }
+
+  .button-contact-submit{
+    margin: 10px;
   }
 }

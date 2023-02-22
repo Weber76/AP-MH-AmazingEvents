@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
-   >
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-   >
-    <link rel="stylesheet" href="./css/style.css">
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Contact</title>
   </head>
-  <body>
+  <body class="container-body">
     <header class="align-items-center ps-2 pe-2">
       <aside class="aside-logo">
         <img
           class="img-logo"
           src="./img/logo_amazing_events.png"
-          alt="Logo MDHL"
-       >
+          alt="Logo Amazing Events"
+        />
       </aside>
       <nav class="nav-bar align-items-center">
         <ul class="nav-list">
@@ -37,7 +37,7 @@
           <li class="btn btn-primary navi-link">
             <a href="past.html">Past Events</a>
           </li>
-          <li class="btn btn-secondary navi-link visit">Contact</li>
+          <li class="btn btn-secondary visit">Contact</li>
           <li class="btn btn-primary navi-link">
             <a href="stats.html">Stats</a>
           </li>
@@ -45,40 +45,40 @@
       </nav>
       <nav class="nav-down">
         <button
-          class="nav-bar-button btn btn-primary dropdown-toggle bi bi-list"
+          class="nav-bar-button btn btn-primary dropdown-toggle bi bi-list navi-drop"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         ></button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu down-list">
           <li>
-            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item first-item" href="index.html">Home</a>
           </li>
           <li>
             <a class="dropdown-item" href="upcoming.html">Upcoming Events</a>
           </li>
           <li><a class="dropdown-item" href="past.html">Past Events</a></li>
-          <li><a class="dropdown-item visiting" href="#">Contact</a></li>
+          <li><span class="dropdown-item visiting">Contact</span></li>
           <li><a class="dropdown-item" href="stats.html">Stats</a></li>
         </ul>
       </nav>
     </header>
-    <aside class="d-flex justify-content-between mt-4 mb-4 ms-2 me-2">
+    <aside class="aside-hbar">
       <a href="past.html" class="btn btn-primary">&lt;</a>
       <p class="navi-here">Contact Us</p>
       <a href="stats.html" class="btn btn-primary">&gt;</a>
     </aside>
-    <main>
+    <main class="d-flex flex-grow-1 flex-column">
       <form action="#" class="contact-form" id="contact-form">
-        <fieldset class="d-flex justify-content-center m-4">
+        <fieldset class="contact-field">
           <ul class="contact-list">
             <li>
               <label for="name">Name:</label>
-              <input type="text" id="name" size="30" name="name">
+              <input type="text" id="name" size="30" name="name" />
             </li>
             <li>
               <label for="email">Email:</label>
-              <input type="text" id="email" size="30" name="email">
+              <input type="text" id="email" size="30" name="email" />
             </li>
             <li class="d-flex">
               <label for="message" class="message">Message:</label>
@@ -90,6 +90,7 @@
                 id="message"
                 rows="5"
                 cols="32"
+                maxlength="400"
               ></textarea>
             </li>
             <li class="d-flex justify-content-end">
@@ -105,7 +106,9 @@
         </fieldset>
       </form>
     </main>
-    <footer class="d-flex justify-content-between">
+    <footer
+      class="d-flex justify-content-between align-items-center footer-container"
+    >
       <ul class="social d-flex">
         <li>
           <a href="#"><span class="bi bi-instagram h4"></span></a>
@@ -117,6 +120,7 @@
           <a href="#"><span class="bi bi-whatsapp h4"></span></a>
         </li>
       </ul>
+      <p class="footer-para">FE05-TN</p>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

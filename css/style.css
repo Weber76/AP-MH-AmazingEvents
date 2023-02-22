@@ -121,8 +121,8 @@ header {
 .searching {
   display: flex;
   justify-content: space-between;
-  padding: 10px 5px 0px 5px;
-  flex: auto;
+  align-items: center;
+  padding: 4px 5px;
   background-image: radial-gradient(
     circle at 105% 68.3%,
     #b7bf7f 0%,
@@ -137,60 +137,32 @@ header {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0px;
-  margin-bottom: 5px;
+  margin: 0;
   list-style-type: none;
 }
 
 .check-slide {
   display: flex;
   flex-wrap: nowrap;
-  height: 34px;
-  width: 200px;
+  height: 22px;
+  width: 100px;
   padding: 0px 4px 0px 5px;
-  margin: 5px 5px;
-  border: 1px solid gray;
-  border-radius: 5px;
+  margin: 5px 0px;
 }
 
 .check-slide label {
   display: flex;
-  align-items: center;
+  justify-content: center;
   width: 100%;
+  font-size: 12px;
+  padding: 0px 0px 0px 0px;
 }
 
 .label-chk {
-  min-width: 32px;
-  height: 18px;
-  margin-right: 8px;
-  background: #979797;
-  border-radius: 100px;
-  cursor: pointer;
+  display: block;
   position: relative;
-  transition: 1s;
-}
-
-.label-chk::after {
-  content: "";
-  width: 13px;
-  height: 13px;
-  background: #eee;
-  border-radius: 100px;
-  position: absolute;
-  top: 2px;
-  left: 3px;
-  transition: 0.1s;
-}
-
-.slide-chk:checked + .label-chk::after {
-  left: 15px;
-}
-
-.slide-chk:checked + .label-chk {
-  background: #448f63;
-}
-
-.slide-chk {
-  display: none;
+  top: -4px;
+  left: -10px;
 }
 
 /* Buscador */
@@ -198,7 +170,6 @@ header {
 .text-search {
   flex-shrink: 0;
   width: 190px;
-  margin-top: 5px;
   margin-right: 3px;
 }
 
@@ -434,7 +405,7 @@ tbody.statistics-body td {
 
   .cat-ul {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     flex-wrap: wrap;
     padding-left: 0px;
     list-style-type: none;
@@ -443,7 +414,7 @@ tbody.statistics-body td {
   .text-search {
     display: flex;
     flex-shrink: 0;
-    width: auto;
+    width: 100%;
   }
 
   .input-search {
@@ -452,6 +423,10 @@ tbody.statistics-body td {
   }
 
   .check-slide {
-    width: auto;
+    width: 98px;
+  }
+
+  .category {
+    width: 100%;
   }
 }

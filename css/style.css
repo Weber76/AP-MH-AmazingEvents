@@ -191,6 +191,7 @@ header {
 
 .card {
   width: 250px;
+  height: 360px;
   margin: 10px;
 }
 
@@ -202,13 +203,23 @@ header {
 .card .card-body {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.card a {
-  align-self: center;
+.card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-text{
+  margin: 0px;
 }
 
 .btn-card {
+  padding: 3px 6px;
+  font-size: 12px;
   --bs-btn-color: #fff;
   --bs-btn-bg: #2f2246;
   --bs-btn-border-color: #bc4e9e;
@@ -327,9 +338,12 @@ ul.social span {
 .statistics-table {
   border: 1px solid black;
   max-width: 900px;
-  margin-top: -1px;
+  margin-top: 10px;
 }
 
+.column-width {
+  width: calc(100% / 3);
+}
 .statistics-head {
   text-align: center;
   font-size: 24px;
@@ -419,6 +433,10 @@ tbody.statistics-body td {
     border-radius: 9px 9px 0px 0px;
   }
 
+  .last-item {
+    border-radius: 0px 0px 9px 9px;
+  }
+
   .aside-logo {
     margin: 5px;
   }
@@ -484,7 +502,7 @@ tbody.statistics-body td {
     border: 1px solid #ced4da;
   }
 
-  .button-contact-submit{
+  .button-contact-submit {
     margin: 10px;
   }
 }

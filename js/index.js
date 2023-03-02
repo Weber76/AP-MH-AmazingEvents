@@ -1,4 +1,6 @@
-let capturedElement = document.getElementById("main-article");
+/* Show cards */
+
+let capturedArticle = document.getElementById("main-article");
 
 let cards = ``;
 
@@ -23,4 +25,4 @@ for (let objectEvent of data.events) {
   cards = cards + cardTemplate;
 }
 
-capturedElement.innerHTML = cards;
+capturedArticle.innerHTML = cards;

@@ -72,72 +72,7 @@
       <form class="searching">
         <fieldset class="category">
           <ul class="cat-ul" id="categories">
-            <li class="check-slide">
-              <input
-                class="btn-check"
-                type="checkbox"
-                id="cinema"
-                name="category_cinema"
-                checked
-             ><label for="cinema" class="btn btn-outline-secondary"
-                ><span class="label-chk"></span>Cinema</label
-              >
-            </li>
-            <li class="check-slide">
-              <input
-                class="btn-check"
-                type="checkbox"
-                id="costume"
-                name="category_costume"
-                checked
-             ><label for="costume" class="btn btn-outline-secondary"
-                ><span class="label-chk"></span>Costume Party</label
-              >
-            </li>
-            <li class="check-slide">
-              <input
-                class="btn-check"
-                type="checkbox"
-                id="food"
-                name="category_food"
-                checked
-             ><label for="food" class="btn btn-outline-secondary"
-                ><span class="label-chk"></span>Food Fair</label
-              >
-            </li>
-            <li class="check-slide">
-              <input
-                class="btn-check"
-                type="checkbox"
-                id="marathon"
-                name="category_marathon"
-                checked
-             ><label for="marathon" class="btn btn-outline-secondary"
-                ><span class="label-chk"></span>Marathon</label
-              >
-            </li>
-            <li class="check-slide">
-              <input
-                class="btn-check"
-                type="checkbox"
-                id="museum"
-                name="category_museum"
-                checked
-             ><label for="museum" class="btn btn-outline-secondary"
-                ><span class="label-chk"></span>Museum Tour</label
-              >
-            </li>
-            <li class="check-slide">
-              <input
-                class="btn-check"
-                type="checkbox"
-                id="music"
-                name="category_music"
-                checked
-             ><label for="music" class="btn btn-outline-secondary">
-                <span class="label-chk"></span>Music Concert</label
-              >
-            </li>
+            <li><h3>Sorry, no categories was created yet.</h3></li>
           </ul>
         </fieldset>
         <fieldset class="text-search">
@@ -146,13 +81,16 @@
             type="text"
             placeholder="Search"
             aria-label="default input example"
+            id="search_bar"
          >
         </fieldset>
       </form>
       <article
         class="d-flex flex-wrap justify-content-evenly mt-4 mb-4 ms-2 me-2"
         id="main-article"
-      ><h3>Sorry, no events matched your search. Please try again.</h3></article>
+      >
+        <h3>Sorry, no events matched your search. Please try again.</h3>
+      </article>
     </main>
     <footer
       class="d-flex justify-content-between align-items-center footer-container"
@@ -177,6 +115,8 @@
     ></script>
     <script src="./js/data_ae_1.js"></script>
     <script src="./js/show_categories.js"></script>
+    <script src="./js/print_cards.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/search_bar.js"></script>
   </body>
 </html>

@@ -24,12 +24,13 @@ for (let i = 0; i < categoriesExist.length; i++) {
     `
     <li class="check-slide">
       <input
-        class="btn-check"
+        class="btn-check button-check"
         type="checkbox"
-        id="cinema"
-        name="category_cinema"
-        checked
-     ><label for="cinema" class="btn btn-outline-secondary"
+        id="${categoriesExist[i].toLowerCase().replace(" ", "_")}"
+        name="category_${categoriesExist[i].toLowerCase().replace(" ", "_")}"
+     ><label for="${categoriesExist[i]
+       .toLowerCase()
+       .replace(" ", "_")}" class="btn btn-outline-secondary"
         ><span class="label-chk"></span>${categoriesExist[i]}</label
       >
     </li>`;

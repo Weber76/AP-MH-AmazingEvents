@@ -15,7 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
    >
     <link rel="stylesheet" href="./css/style.css">
-    <title>Upcoming Events</title>
+    <title>Detail Event</title>
   </head>
   <body class="container-body">
     <header class="align-items-center ps-2 pe-2">
@@ -31,7 +31,9 @@
           <li class="btn btn-primary navi-link">
             <a href="index.html">Home</a>
           </li>
-          <li class="btn btn-secondary visit">Upcoming Events</li>
+          <li class="btn btn-primary navi-link">
+            <a href="upcoming.html">Upcoming Events</a>
+          </li>
           <li class="btn btn-primary navi-link">
             <a href="past.html">Past Events</a>
           </li>
@@ -55,7 +57,7 @@
             <a class="dropdown-item first-item" href="index.html">Home</a>
           </li>
           <li>
-            <span class="dropdown-item visiting">Upcoming Events</span>
+            <a class="dropdown-item" href="upcoming.html">Upcoming Events</a>
           </li>
           <li><a class="dropdown-item" href="past.html">Past Events</a></li>
           <li><a class="dropdown-item" href="contact.html">Contact</a></li>
@@ -66,30 +68,14 @@
       </nav>
     </header>
     <aside class="aside-hbar">
-      <a href="index.html" class="btn btn-primary">&lt;</a>
-      <p class="navi-here">Upcoming Events</p>
-      <a href="past.html" class="btn btn-primary">&gt;</a>
+      <a href="stats.html" class="btn btn-primary">&lt;</a>
+      <p class="navi-here">Home</p>
+      <a href="upcoming.html" class="btn btn-primary">&gt;</a>
     </aside>
     <main class="d-flex flex-grow-1 flex-column">
-      <form class="searching">
-        <fieldset class="category">
-          <ul class="cat-ul" id="categories">
-            <li><h3>Sorry, no categories was created yet.</h3></li>
-          </ul>
-        </fieldset>
-        <fieldset class="text-search">
-          <input
-            class="input-search form-control"
-            type="text"
-            placeholder="Search"
-            aria-label="default input example"
-            id="search_bar"
-         >
-        </fieldset>
-      </form>
       <article
         class="d-flex flex-wrap justify-content-evenly mt-4 mb-4 ms-2 me-2"
-        id="main-article"
+        id="main-article-details"
       >
         <h3>Sorry, no events matched your search. Please try again.</h3>
       </article>
@@ -116,9 +102,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/data_ae_1.js"></script>
-    <script src="./js/show_categories.js"></script>
-    <script src="./js/print_cards.js"></script>
-    <script src="./js/upcoming.js"></script>
-    <script src="./js/search_bar.js"></script>
+    <script src="./js/details.js"></script>
   </body>
 </html>

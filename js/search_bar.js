@@ -1,60 +1,49 @@
-document
-  .getElementById("search_bar")
-  .addEventListener("keyup", refreshMainArticle);
+async function dataConsult(capturedElement, capturedPage) {
+  try {
+    let fetchURL = "https://mh.up.railway.app/api/amazing-events";
 
-document.querySelectorAll("input.button-check").forEach((currentObj) => {
-  currentObj.addEventListener("change", refreshMainArticle);
-});
+    /* check array */
 
-window.addEventListener("load", refreshMainArticleTimeOut);
-
-function refreshMainArticleTimeOut() {
-  setTimeout(refreshMainArticle, 500);
-}
-
-function refreshMainArticle() {
-  let searchChecks = Array.from(
-    document.querySelectorAll(".button-check:checked"),
-    (currentObj) => currentObj.id
-  );
-
-  let searchText = document
-    .getElementById("search_bar")
-    .value.toLowerCase()
-    .trim()
-    .split(" ");
-
-  let currentPage = location.pathname;
-
-  let currentDate = data.currentDate;
-
-  if (currentPage == "/upcoming.html") {
-    dataEvents = data.events.filter((currentObj) => {
-      return currentObj.date >= currentDate;
-    });
-  } else if (currentPage == "/past.html") {
-    dataEvents = data.events.filter((currentObj) => {
-      return currentObj.date < currentDate;
-    });
-  } else {
-    dataEvents = data.events;
-  }
-
-  searchResult = dataEvents.filter((currentObj) => {
-    return (
-      (searchChecks.length === 0 ||
-        searchChecks.includes(
-          currentObj.category.toLowerCase().replace(" ", "_")
-        )) &&
-      searchText.every((textSearch) =>
-        (
-          currentObj.name.toLowerCase() +
-          " " +
-          currentObj.description.toLowerCase()
-        ).includes(textSearch)
-      )
+    let searchChecks = Array.from(
+      document.querySelectorAll(".button-check:checked"),
+      (currentObj) => currentObj.id
     );
-  });
 
-  printCards(searchResult);
+    /* search box */
+    let searchText = document
+      .getElementById("search_bar")
+      .value.toLowerCase()
+      .trim()
+      .split(" ");
+
+    if (capturedPage == "/upcoming.html") {
+      fetchURL = "https://mh.up.railway.app/api/amazing-events?time=upcoming";
+    } else if (capturedPage == "/past.html") {
+      fetchURL = "https://mh.up.railway.app/api/amazing-events?time=past";
+    }
+
+    let dataEvents = await fetch(fetchURL);
+    dataEvents = await dataEvents.json();
+    dataEvents = await dataEvents.events;
+    dataEvents = await dataEvents.filter((currentObj) => {
+      return (
+        (searchChecks.length === 0 ||
+          searchChecks.includes(
+            currentObj.category.toLowerCase().replace(" ", "_")
+          )) &&
+        searchText.every((textSearch) =>
+          (
+            currentObj.name.toLowerCase() +
+            " " +
+            currentObj.description.toLowerCase()
+          ).includes(textSearch)
+        )
+      );
+    });
+
+    printCards(capturedElement, capturedPage, dataEvents);
+  } catch (error) {
+    console.log("An error ocurred.");
+    console.log(error);
+  }
 }

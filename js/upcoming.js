@@ -1,9 +1,17 @@
-let capturedArticle = document.getElementById("main-article");
-let cards = ``;
-let currentDate = data.currentDate;
+let fetchURL = "https://mh.up.railway.app/api/amazing-events?time=upcoming";
 
-printCards(
-  data.events.filter((currentObj) => {
-    return currentObj.date >= currentDate;
-  })
-);
+showCategories(fetchURL);
+
+document
+  .getElementById("search_bar")
+  .addEventListener("keyup", refreshMainArticle);
+
+window.addEventListener("load", refreshMainArticleTimeOut);
+
+function refreshMainArticleTimeOut() {
+  setTimeout(refreshMainArticle, 500);
+}
+
+function refreshMainArticle() {
+  dataConsult(document.getElementById("main-article"), location.pathname);
+}

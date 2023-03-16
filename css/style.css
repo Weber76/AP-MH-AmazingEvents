@@ -191,7 +191,7 @@ header {
 
 .card {
   width: 250px;
-  height: 360px;
+  height: 430px;
   margin: 10px;
 }
 
@@ -510,7 +510,7 @@ tbody.statistics-body td {
 
 .details-card {
   width: 500px;
-  height: 720px;
+  height: 700px;
   margin: 10px;
 }
 
@@ -526,4 +526,46 @@ tbody.statistics-body td {
 
 .details-card .card-text {
   margin: 20px 0px 40px 0px;
+}
+
+/* Modal - Details */
+.a-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-left: calc(50vw - 250px);
+  padding-top: calc(50vh - 360px);
+  top: 0px;
+  left: 0px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.i-frame {
+  height: 720px;
+  width: 500px;
+  border: none;
+  border-radius: 10px;
+}
+
+.details-body {
+  background-image: radial-gradient(
+    circle at 105% 68.3%,
+    #2f2246 0%,
+    #58b980 50%,
+    #702e5f 100%
+  );
+}
+
+.close {
+  position: relative;
+  top: -33px;
+  left: -75px;
+}
+
+.price {
+  margin: 0px;
 }

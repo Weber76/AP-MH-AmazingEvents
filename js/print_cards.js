@@ -1,5 +1,4 @@
-function printCards(cardList) {
-  let capturedElement = document.getElementById("main-article");
+function printCards(capturedElement, capturedPage, cardList) {
   let cards = ``;
 
   if (cardList.length > 0) {
@@ -16,8 +15,14 @@ function printCards(cardList) {
           <p class="card-text">${cardEvent.description}</p>
         </div>
         <div class="card-foot">
-            <p class="card-text">Price ${cardEvent.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
-            <a href="./details.html?${cardEvent._id}" class="btn btn-primary btn-card">View more...</a>
+            <p class="card-text">Price ${cardEvent.price.toLocaleString(
+              "en-US",
+              { style: "currency", currency: "USD" }
+            )}</p>
+            <a href="./details.html?${cardEvent.id}"
+            target="i-frame"
+            onclick="showModal()"
+            class="btn btn-primary btn-card open-modal">View more...</a>
         </div>
       </div>
     </div>`;
@@ -39,7 +44,7 @@ function printCards(cardList) {
         </div>
         <div class="card-foot">
             <p class="card-text">Sorry</p>
-            <a href="${location.pathname}" class="btn btn-primary btn-card">Clear filter...</a>
+            <a href="${capturedPage}" class="btn btn-primary btn-card">Clear filter...</a>
         </div>
       </div>
     </div>`;

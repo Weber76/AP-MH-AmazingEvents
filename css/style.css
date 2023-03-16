@@ -213,7 +213,7 @@ header {
   align-items: center;
 }
 
-.card-text{
+.card-text {
   margin: 0px;
 }
 
@@ -448,9 +448,8 @@ tbody.statistics-body td {
   .searching {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 10px 5px;
-    flex: auto;
   }
 
   .cat-ul {
@@ -505,4 +504,26 @@ tbody.statistics-body td {
   .button-contact-submit {
     margin: 10px;
   }
+}
+
+/* Details page */
+
+.details-card {
+  width: 500px;
+  height: 720px;
+  margin: 10px;
+}
+
+.details-card img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.details-card .card-title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.details-card .card-text {
+  margin: 20px 0px 40px 0px;
 }

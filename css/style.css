@@ -339,6 +339,7 @@ ul.social span {
   border: 1px solid black;
   max-width: 900px;
   margin-top: 10px;
+  border-radius: 10px;
 }
 
 .column-width {
@@ -528,6 +529,10 @@ tbody.statistics-body td {
   margin: 20px 0px 40px 0px;
 }
 
+.details-card .card-text-bold {
+  font-weight: bold;
+}
+
 /* Modal - Details */
 .a-modal {
   display: none; /* Hidden by default */
@@ -568,4 +573,23 @@ tbody.statistics-body td {
 
 .price {
   margin: 0px;
+}
+
+/* Statics */
+#eventsStatsBody p {
+  margin: 0;
+}
+
+.events-number {
+  font-weight: normal;
+}
+
+.sub-head {
+  font-size: x-large;
+  vertical-align: text-top;
+  border: 1px solid black;
+}
+
+.contact-text {
+  background: rgba(255, 255, 255, 0.4);
 }

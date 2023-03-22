@@ -37,10 +37,10 @@ async function detailCard() {
       )} spectators.</p>
     </div>
     <div class="card-foot">
-        <p class="price">Price ${eventToPrint.price.toLocaleString(
-          "en-US",
-          { style: "currency", currency: "USD" }
-        )}</p>
+        <p class="price">Price ${eventToPrint.price.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+        })}</p>
     </div>
   </div>
 </div>`;

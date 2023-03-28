@@ -1,27 +1,26 @@
-/* Show categories */
+async function showCategories(fetchURL) {
+  try {
+    let capturedCategories = document.getElementById("categories");
+    let categoriesElements = ``;
+    let categoriesExist = [];
+    let dataBase = await fetch(fetchURL).then((response) => response.json());
 
-let capturedCategories = document.getElementById("categories");
+    for (let objectEvent of dataBase.events) {
+      if (
+        categoriesExist.findIndex((cat) => {
+          return cat == objectEvent.category;
+        }) < 0
+      ) {
+        categoriesExist.push(objectEvent.category);
+      }
+    }
 
-let categoriesElements = ``;
+    categoriesExist = categoriesExist.sort();
 
-let categoriesExist = [];
-
-for (let objectEvent of data.events) {
-  if (
-    categoriesExist.findIndex((cat) => {
-      return cat == objectEvent.category;
-    }) < 0
-  ) {
-    categoriesExist.push(objectEvent.category);
-  }
-}
-
-categoriesExist = categoriesExist.sort();
-
-for (let i = 0; i < categoriesExist.length; i++) {
-  categoriesElements =
-    categoriesElements +
-    `
+    for (let i = 0; i < categoriesExist.length; i++) {
+      categoriesElements =
+        categoriesElements +
+        `
     <li class="check-slide">
       <input
         class="btn-check button-check"
@@ -34,6 +33,14 @@ for (let i = 0; i < categoriesExist.length; i++) {
         ><span class="label-chk"></span>${categoriesExist[i]}</label
       >
     </li>`;
-}
+    }
 
-capturedCategories.innerHTML = categoriesElements;
+    capturedCategories.innerHTML = categoriesElements;
+
+    document.querySelectorAll("input.button-check").forEach((currentObj) => {
+      currentObj.addEventListener("change", refreshMainArticle);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}

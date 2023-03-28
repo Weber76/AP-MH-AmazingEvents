@@ -1,19 +1,25 @@
-let hBar = document.querySelector(".aside-hbar");
-let eventToPrint = data.events.find((currentObj) => {
-  return currentObj._id == location.search.substring(1);
-});
+let fetchURL = "https://mh.up.railway.app/api/amazing-events";
+let idDetail = location.search.substring(1);
 let articleDetails = document.getElementById("main-article-details");
 
-const dateOfEvent = new Date(eventToPrint.date + "T12:00:00Z");
-let textDateOfEvent = dateOfEvent.toLocaleString("en-US", {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+async function detailCard() {
+  try {
+    let eventToPrint = await fetch(fetchURL);
+    eventToPrint = await eventToPrint.json();
+    eventToPrint = await eventToPrint.events;
+    eventToPrint = await eventToPrint.find((currentObj) => {
+      return currentObj.id == idDetail;
+    });
 
-hBar.innerHTML = `<p class="navi-here flex-grow-1">${eventToPrint.name}</p>`;
-articleDetails.innerHTML = `
+    const dateOfEvent = new Date(eventToPrint.date);
+    let textDateOfEvent = dateOfEvent.toLocaleString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    articleDetails.innerHTML = `
 <div class="card details-card">
   <img
     src="${eventToPrint.image}"
@@ -31,16 +37,18 @@ articleDetails.innerHTML = `
       )} spectators.</p>
     </div>
     <div class="card-foot">
-        <p class="card-text">Price ${eventToPrint.price.toLocaleString(
-          "en-US",
-          { style: "currency", currency: "USD" }
-        )}</p>
-        <button
-            onclick="window.history.back();"
-            class="btn btn-primary btn-card"
-            >Go Back...</button>
+        <p class="price">Price ${eventToPrint.price.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+        })}</p>
     </div>
   </div>
 </div>`;
 
-document.querySelector("title").innerHTML = `${eventToPrint.name} details`;
+    document.querySelector("title").innerHTML = `${eventToPrint.name} details`;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+detailCard();

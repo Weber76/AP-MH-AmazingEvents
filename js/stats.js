@@ -82,121 +82,19 @@ async function upcomingEventsStats() {
         estimate: each.estimate,
         capacity: each.capacity,
         price: each.price,
+        revenue: each.estimate * each.price,
+        attendance: (each.estimate * 100) / each.capacity,
       };
     });
-
-    sortByCategories.sort(function (a, b) {
-      let x = a.category.toLowerCase();
-      let y = b.category.toLowerCase();
-      if (x < y) {
-        return -1;
-      }
-      if (x > y) {
-        return 1;
-      }
-      return 0;
-    });
-
-    console.log(sortByCategories);
 
     let eventsCategories = sortByCategories.map((each) => {
       return each.category;
     });
 
     eventsCategories = new Set(eventsCategories);
-    eventsCategories = Array.from(eventsCategories);
-
-    console.log(eventsCategories);
-
-    for (let objectEvent of sortByCategories) {
-      if (categoriesUpcoming.length == 0) {
-        categoriesUpcoming.push({
-          name: objectEvent.category,
-          revenue: objectEvent.estimate * objectEvent.price,
-          estimate: objectEvent.estimate,
-          capacity: objectEvent.capacity,
-        });
-      } else {
-        if (
-          categoriesUpcoming[categoriesUpcoming.length - 1].name ==
-          objectEvent.category
-        ) {
-          categoriesUpcoming[categoriesUpcoming.length - 1] = {
-            name: objectEvent.category,
-            revenue:
-              objectEvent.estimate * objectEvent.price +
-              categoriesUpcoming[categoriesUpcoming.length - 1].revenue,
-            estimate:
-              objectEvent.estimate +
-              categoriesUpcoming[categoriesUpcoming.length - 1].estimate,
-            capacity:
-              objectEvent.capacity +
-              categoriesUpcoming[categoriesUpcoming.length - 1].capacity,
-          };
-        } else {
-          categoriesUpcoming.push({
-            name: objectEvent.category,
-            revenue: objectEvent.estimate * objectEvent.price,
-            estimate: objectEvent.estimate,
-            capacity: objectEvent.capacity,
-          });
-        }
-      }
-    }
-
-    for (let i = 0; i < categoriesUpcoming.length; i++) {
-      innerTableUpcoming =
-        innerTableUpcoming +
-        `
-        <tr>
-        <td>
-        <p>${categoriesUpcoming[i].name}</p>
-        </td>
-        <td>
-        <p>&#36; ${categoriesUpcoming[i].revenue.toLocaleString("en-US")}</p>
-        </td>
-        <td>
-        <p>${(
-          (categoriesUpcoming[i].estimate * 100) /
-          categoriesUpcoming[i].capacity
-        ).toFixed(2)} %</p>
-        </td>
-        </tr>`;
-    }
-
-    capturedElement.innerHTML = innerTableUpcoming;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-upcomingEventsStats();
-
-async function pastEventsStats() {
-  try {
-    let sortByCategories = [];
-
-    let innerTableUpcoming = ``;
-
-    let capturedElement = document.getElementById("pastStatsBody");
-
-    let dataEvents = await fetch(pastFetchURL).then((response) =>
-      response.json()
-    );
-
-    for (let objectEvent of dataEvents.events) {
-      sortByCategories.push({
-        name: objectEvent.name,
-        category: objectEvent.category,
-        assistance: objectEvent.assistance,
-        capacity: objectEvent.capacity,
-        price: objectEvent.price,
-      });
-    }
-
-    sortByCategories.sort(function (a, b) {
-      let x = a.category.toLowerCase();
-      let y = b.category.toLowerCase();
+    eventsCategories = Array.from(eventsCategories).sort(function (a, b) {
+      let x = a.toLowerCase();
+      let y = b.toLowerCase();
       if (x < y) {
         return -1;
       }
@@ -206,45 +104,30 @@ async function pastEventsStats() {
       return 0;
     });
 
+    console.log(eventsCategories);
+
     console.log(sortByCategories);
 
-    categoriesUpcoming = [];
+    eventsCategories.forEach((element) => {
+      console.log("Categoría :" + element);
+      categoriesUpcoming.push(
+        sortByCategories
+          .filter((each) => {
+            return each.category == element;
+          })
+          .reduce((each, actual, index) => {
+            return {
+              name: actual.category,
+              estimate: actual.estimate + each.estimate,
+              capacity: actual.capacity + each.capacity,
+              revenue: actual.revenue + each.revenue,
+              attendance: actual.attendance + each.attendance,
+              count: index + 1,
+            };
+          })
+      );
+    });
 
-    for (let objectEvent of sortByCategories) {
-      if (categoriesUpcoming.length == 0) {
-        categoriesUpcoming.push({
-          name: objectEvent.category,
-          revenue: objectEvent.assistance * objectEvent.price,
-          assistance: objectEvent.assistance,
-          capacity: objectEvent.capacity,
-        });
-      } else {
-        if (
-          categoriesUpcoming[categoriesUpcoming.length - 1].name ==
-          objectEvent.category
-        ) {
-          categoriesUpcoming[categoriesUpcoming.length - 1] = {
-            name: objectEvent.category,
-            revenue:
-              objectEvent.assistance * objectEvent.price +
-              categoriesUpcoming[categoriesUpcoming.length - 1].revenue,
-            assistance:
-              objectEvent.assistance +
-              categoriesUpcoming[categoriesUpcoming.length - 1].assistance,
-            capacity:
-              objectEvent.capacity +
-              categoriesUpcoming[categoriesUpcoming.length - 1].capacity,
-          };
-        } else {
-          categoriesUpcoming.push({
-            name: objectEvent.category,
-            revenue: objectEvent.assistance * objectEvent.price,
-            assistance: objectEvent.assistance,
-            capacity: objectEvent.capacity,
-          });
-        }
-      }
-    }
     console.log(categoriesUpcoming);
 
     for (let i = 0; i < categoriesUpcoming.length; i++) {
@@ -260,8 +143,100 @@ async function pastEventsStats() {
         </td>
         <td>
         <p>${(
-          (categoriesUpcoming[i].assistance * 100) /
-          categoriesUpcoming[i].capacity
+          categoriesUpcoming[i].attendance / categoriesUpcoming[i].count
+        ).toFixed(2)} %</p>
+        </td>
+        </tr>`;
+    }
+
+    capturedElement.innerHTML = innerTableUpcoming;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+upcomingEventsStats();
+
+async function pastEventsStats() {
+  try {
+    let innerTableUpcoming = ``;
+    let categoriesUpcoming = [];
+
+    let capturedElement = document.getElementById("pastStatsBody");
+
+    let dataEvents = await fetch(pastFetchURL).then((response) =>
+      response.json()
+    );
+
+    let sortByCategories = dataEvents.events.map((each) => {
+      return {
+        name: each.name,
+        category: each.category,
+        assistance: each.assistance,
+        capacity: each.capacity,
+        price: each.price,
+        revenue: each.assistance * each.price,
+        attendance: (each.assistance * 100) / each.capacity,
+      };
+    });
+
+    let eventsCategories = sortByCategories.map((each) => {
+      return each.category;
+    });
+
+    eventsCategories = new Set(eventsCategories);
+    eventsCategories = Array.from(eventsCategories).sort(function (a, b) {
+      let x = a.toLowerCase();
+      let y = b.toLowerCase();
+      if (x < y) {
+        return -1;
+      }
+      if (x > y) {
+        return 1;
+      }
+      return 0;
+    });
+
+    console.log(eventsCategories);
+
+    console.log(sortByCategories);
+
+    eventsCategories.forEach((element) => {
+      console.log("Categoría :" + element);
+      categoriesUpcoming.push(
+        sortByCategories
+          .filter((each) => {
+            return each.category == element;
+          })
+          .reduce((each, actual, index) => {
+            return {
+              name: actual.category,
+              assistance: actual.assistance + each.assistance,
+              capacity: actual.capacity + each.capacity,
+              revenue: actual.revenue + each.revenue,
+              attendance: actual.attendance + each.attendance,
+              count: index + 1,
+            };
+          })
+      );
+    });
+
+    console.log(categoriesUpcoming);
+
+    for (let i = 0; i < categoriesUpcoming.length; i++) {
+      innerTableUpcoming =
+        innerTableUpcoming +
+        `
+        <tr>
+        <td>
+        <p>${categoriesUpcoming[i].name}</p>
+        </td>
+        <td>
+        <p>&#36; ${categoriesUpcoming[i].revenue.toLocaleString("en-US")}</p>
+        </td>
+        <td>
+        <p>${(
+          categoriesUpcoming[i].attendance / categoriesUpcoming[i].count
         ).toFixed(2)} %</p>
         </td>
         </tr>`;

@@ -4,6 +4,9 @@ async function showCategories(fetchURL) {
     let categoriesElements = ``;
     let categoriesExist = [];
     let dataBase = await fetch(fetchURL).then((response) => response.json());
+    /* Otra forma de hacerlo */
+    /* const response = await fetch(fetchURL);
+       const dataBase = await response.json(); */
 
     for (let objectEvent of dataBase.events) {
       if (

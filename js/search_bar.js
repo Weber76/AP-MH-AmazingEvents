@@ -1,6 +1,7 @@
 async function dataConsult(capturedElement, capturedPage) {
   try {
-    let fetchURL = "https://mh.up.railway.app/api/amazing-events";
+    let fetchURL = "./js/amazing.json";
+    /* let fetchURL = "https://mh.up.railway.app/api/amazing-events"; */
 
     /* check array */
 

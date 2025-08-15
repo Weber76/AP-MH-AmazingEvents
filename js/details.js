@@ -1,4 +1,5 @@
-let fetchURL = "https://mh.up.railway.app/api/amazing-events";
+let fetchURL = "./js/amazing.json";
+/* let fetchURL = "https://mh.up.railway.app/api/amazing-events"; */
 let idDetail = location.search.substring(1);
 let articleDetails = document.getElementById("main-article-details");
 

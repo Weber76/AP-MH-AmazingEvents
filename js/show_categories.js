@@ -1,29 +1,26 @@
-async function showCategories(fetchURL) {
-  try {
-    let capturedCategories = document.getElementById("categories");
-    let categoriesElements = ``;
-    let categoriesExist = [];
-    let dataBase = await fetch(fetchURL).then((response) => response.json());
-    /* Otra forma de hacerlo */
-    /* const response = await fetch(fetchURL);
-       const dataBase = await response.json(); */
+/* devuelve las categorías en el objeto JSON */
 
-    for (let objectEvent of dataBase.events) {
-      if (
-        categoriesExist.findIndex((cat) => {
-          return cat == objectEvent.category;
-        }) < 0
-      ) {
-        categoriesExist.push(objectEvent.category);
-      }
+function showCategories(dataBaseEvents) {
+  let capturedCategories = document.getElementById("categories");
+  let categoriesElements = ``;
+  let categoriesExist = [];
+
+  for (let objectEvent of dataBaseEvents) {
+    if (
+      categoriesExist.findIndex((cat) => {
+        return cat == objectEvent.category;
+      }) < 0
+    ) {
+      categoriesExist.push(objectEvent.category);
     }
+  }
 
-    categoriesExist = categoriesExist.sort();
+  categoriesExist = categoriesExist.sort();
 
-    for (let i = 0; i < categoriesExist.length; i++) {
-      categoriesElements =
-        categoriesElements +
-        `
+  for (let i = 0; i < categoriesExist.length; i++) {
+    categoriesElements =
+      categoriesElements +
+      `
     <li class="check-slide">
       <input
         class="btn-check button-check"
@@ -36,14 +33,11 @@ async function showCategories(fetchURL) {
         ><span class="label-chk"></span>${categoriesExist[i]}</label
       >
     </li>`;
-    }
-
-    capturedCategories.innerHTML = categoriesElements;
-
-    document.querySelectorAll("input.button-check").forEach((currentObj) => {
-      currentObj.addEventListener("change", refreshMainArticle);
-    });
-  } catch (error) {
-    console.log(error);
   }
+
+  capturedCategories.innerHTML = categoriesElements;
+
+  document.querySelectorAll("input.button-check").forEach((currentObj) => {
+    currentObj.addEventListener("change", refreshMainArticle);
+  });
 }

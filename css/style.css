@@ -258,13 +258,13 @@ header {
 
 .contact-list li label {
   width: 100px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: large;
   margin: 10px;
 }
 
 .contact-list li input {
-  max-width: 300px;
+  max-width: 260px;
   border: 1px solid #ced4da;
 }
 

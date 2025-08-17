@@ -19,7 +19,7 @@ function printCards(capturedElement, capturedPage, cardList) {
               "en-US",
               { style: "currency", currency: "USD" }
             )}</p>
-            <a href="./details.html?${cardEvent.id}"
+            <a href="./details.html?${cardEvent._id}"
             target="i-frame"
             onclick="showModal()"
             class="btn btn-primary btn-card open-modal">View more...</a>

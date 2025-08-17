@@ -1,5 +1,4 @@
 let fetchURL = "./js/amazing.json";
-/* let fetchURL = "https://mh.up.railway.app/api/amazing-events"; */
 let idDetail = location.search.substring(1);
 let articleDetails = document.getElementById("main-article-details");
 
@@ -9,7 +8,7 @@ async function detailCard() {
     eventToPrint = await eventToPrint.json();
     eventToPrint = await eventToPrint.events;
     eventToPrint = await eventToPrint.find((currentObj) => {
-      return currentObj.id == idDetail;
+      return currentObj._id == idDetail;
     });
 
     const dateOfEvent = new Date(eventToPrint.date);

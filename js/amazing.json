@@ -15,89 +15,15 @@
 			"placealt": "Room A",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 42756,
-			"likes": []
-        },{
-            "_id": 2,
-            "name": "Jurassic Park",
-            "category": "Museum",
-			"categoryhash": "633db9b1eccce87232ba2b2c",
-            "date": "2022-07-05",
-            "description": "Let's go meet the biggest dinosaurs in the paleontology museum.",
-            "image": "https://i.postimg.cc/nrQkSwwh/jurassic-park.jpg",
-			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Salidaalmuseo5.jpg",
-            "place": "Field",
-			"placealt": "Field",
-            "price": 6,
-            "capacity": 10000,
-            "assistance": 6589,
-			"likes": []
-        },{
-            "_id": 3,
-            "name": "Metallica in concert",
-            "category": "Concert",
-			"categoryhash": "633db9b1eccce87232ba2b2e",
-            "date": "2022-01-22",
-            "description": "The only concert of the most emblematic band in the world.",
-            "image": "https://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
-			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Conciertodemusica1.jpg",
-            "place": "Stadium",
-			"placealt": "Room A",
-            "price": 100,
-            "capacity": 150000,
-            "assistance": 49798,
-			"likes": []
-        },{
-            "_id": 4,
-            "name": "10K 4 life",
-            "category": "Race",
-			"categoryhash": "633db9b1eccce87232ba2b2f",
-            "date": "2022-03-01",
-            "description": "Come and exercise, improve your health and lifestyle.",
-            "image": "https://i.postimg.cc/2V3FvcvY/10k-4life.jpg",
-			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Maraton3.jpg",
-            "place": "Football field",
-			"placealt": "Football field",
-            "price": 11,
-            "capacity": 200000,
-            "assistance": 198900,
-			"likes": []
-        },{
-            "_id": 5,
-            "name": "School's book fair",
-            "category": "Books",
-			"categoryhash": "633db9b1eccce87232ba2b30",
-            "date": "2022-06-01",
-            "description": "Bring your unused school book and take the one you need.",
-            "image": "https://i.postimg.cc/34BWbTsq/school-bookfair.jpg",
-			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Libros7.jpg",
-            "place": "Multi Space",
-			"placealt": "Room D1",
-            "price": 5,
-            "capacity": 50000,
-            "assistance": 38429,
-			"likes": []
-        },{
-            "_id": 6,
-            "name": "Aladdin",
-            "category": "Cinema",
-			"categoryhash": "633db9b1eccce87232ba2b31",
-            "date": "2019-05-24",
-            "description": "We invite you watch Disney's classic character in new adventures.",
-            "image": "https://i.postimg.cc/L4fQTJdB/aladdin.jpg",
-			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Cine5.jpg",
-            "place": "Showcase",
-			"placealt": "Room D2",
-            "price": 4,
-            "capacity": 2500,
-            "assistance": 1875,
 			"likes": []
         },{
             "_id": 7,
             "name": "Arabic holidays",
             "category": "Food",
 			"categoryhash": "633db9b1eccce87232ba2b2b",
-            "date": "2023-10-12",
+            "date": "2022-10-12",
             "description": "An invitation to enjoy Middle East's flavours.",
             "image": "https://i.postimg.cc/CxJQqX33/arabic.jpg",
 			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Feriadecomidas1.jpg",
@@ -105,6 +31,7 @@
 			"placealt": "Room A",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 42756,
 			"likes": []
         },{
@@ -120,7 +47,88 @@
 			"placealt": "Room A",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 48516,
+			"likes": []
+        },{
+            "_id": 2,
+            "name": "Jurassic Park",
+            "category": "Museum",
+			"categoryhash": "633db9b1eccce87232ba2b2c",
+            "date": "2022-07-05",
+            "description": "Let's go meet the biggest dinosaurs in the paleontology museum.",
+            "image": "https://i.postimg.cc/nrQkSwwh/jurassic-park.jpg",
+			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Salidaalmuseo5.jpg",
+            "place": "Field",
+			"placealt": "Field",
+            "price": 6,
+            "capacity": 10000,
+			"estimate": 5000,
+            "assistance": 6589,
+			"likes": []
+        },{
+            "_id": 3,
+            "name": "Metallica in concert",
+            "category": "Concert",
+			"categoryhash": "633db9b1eccce87232ba2b2e",
+            "date": "2022-01-22",
+            "description": "The only concert of the most emblematic band in the world.",
+            "image": "https://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
+			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Conciertodemusica1.jpg",
+            "place": "Stadium",
+			"placealt": "Room A",
+            "price": 100,
+            "capacity": 150000,
+			"estimate": 45000,
+            "assistance": 49798,
+			"likes": []
+        },{
+            "_id": 4,
+            "name": "10K 4 life",
+            "category": "Race",
+			"categoryhash": "633db9b1eccce87232ba2b2f",
+            "date": "2022-03-01",
+            "description": "Come and exercise, improve your health and lifestyle.",
+            "image": "https://i.postimg.cc/2V3FvcvY/10k-4life.jpg",
+			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Maraton3.jpg",
+            "place": "Football field",
+			"placealt": "Football field",
+            "price": 11,
+            "capacity": 200000,
+			"estimate": 150000,
+            "assistance": 198900,
+			"likes": []
+        },{
+            "_id": 5,
+            "name": "School's book fair",
+            "category": "Books",
+			"categoryhash": "633db9b1eccce87232ba2b30",
+            "date": "2022-06-01",
+            "description": "Bring your unused school book and take the one you need.",
+            "image": "https://i.postimg.cc/34BWbTsq/school-bookfair.jpg",
+			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Libros7.jpg",
+            "place": "Multi Space",
+			"placealt": "Room D1",
+            "price": 5,
+            "capacity": 50000,
+			"estimate": 45000,
+            "assistance": 38429,
+			"likes": []
+        },{
+            "_id": 6,
+            "name": "Aladdin",
+            "category": "Cinema",
+			"categoryhash": "633db9b1eccce87232ba2b31",
+            "date": "2019-05-24",
+            "description": "We invite you watch Disney's classic character in new adventures.",
+            "image": "https://i.postimg.cc/L4fQTJdB/aladdin.jpg",
+			"imagealt": "https://amazingeventsapi.herokuapp.com/api/img/Cine5.jpg",
+            "place": "Showcase",
+			"placealt": "Room D2",
+            "price": 4,
+            "capacity": 2500,
+			"estimate": 2000,
+            "assistance": 1875,
 			"likes": []
         },{
             "_id": 9,
@@ -135,6 +143,7 @@
 			"placealt": "Room A",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 49618,
 			"likes": []
         },{
@@ -150,6 +159,7 @@
 			"placealt": "Room B",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 41962,
 			"likes": []
         },{
@@ -165,6 +175,7 @@
 			"placealt": "Room C",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 49824,
 			"likes": []
         },{
@@ -180,6 +191,7 @@
 			"placealt": "Room A2",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 48358,
 			"likes": []
         },{
@@ -195,6 +207,7 @@
 			"placealt": "Room D4",
             "price": 4,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 44029,
 			"likes": []
         },{
@@ -210,6 +223,7 @@
 			"placealt": "Room D6",
             "price": 4,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 4625,
 			"likes": []
         },{
@@ -225,6 +239,7 @@
 			"placealt": "Room D6",
             "price": 6,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 48000,
 			"likes": []
         },{
@@ -240,6 +255,7 @@
 			"placealt": "Room D6",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 50000,
 			"likes": []
         },{
@@ -255,6 +271,7 @@
 			"placealt": "Room C",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 45781,
 			"likes": []
         },{
@@ -270,6 +287,7 @@
 			"placealt": "Room H",
             "price": 10,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 30000,
 			"likes": []
         },{
@@ -285,6 +303,7 @@
 			"placealt": "Room G",
             "price": 2,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 45000,
 			"likes": []
         },{
@@ -300,6 +319,7 @@
 			"placealt": "Room G",
             "price": 1,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 50000,
 			"likes": []
         },{
@@ -315,6 +335,7 @@
 			"placealt": "Room H",
             "price": 2,
             "capacity": 50000,
+			"estimate": 45000,
             "assistance": 50000,
 			"likes": []
         },{
@@ -330,6 +351,7 @@
 			"placealt": "New York",
             "price": 5,
             "capacity": 3000000,
+			"estimate": 2500000,
             "assistance": 2569800,
 			"likes": []
         },{
@@ -345,6 +367,7 @@
 			"placealt": "Buenos Aires",
             "price": 3,
             "capacity": 500000,
+			"estimate": 450000,
             "assistance": 350000,
 			"likes": []
         },{
@@ -360,6 +383,7 @@
 			"placealt": "Buenos Aires",
             "price": 3,
             "capacity": 500000,
+			"estimate": 450000,
             "assistance": 300000,
 			"likes": []
         },{
@@ -375,6 +399,7 @@
 			"placealt": "New York",
             "price": 5,
             "capacity": 1000000,
+			"estimate": 900000,
             "assistance": 1000000,
 			"likes": []
         },{
@@ -390,6 +415,7 @@
 			"placealt": "Cordoba",
             "price": 2,
             "capacity": 300000,
+			"estimate": 250000,
             "assistance": 200000,
 			"likes": []
         },{
@@ -405,6 +431,7 @@
 			"placealt": "Mar del Plata",
             "price": 2,
             "capacity": 300000,
+			"estimate": 250000,
             "assistance": 300000,
 			"likes": []
         },{
@@ -420,6 +447,7 @@
 			"placealt": "Room A",
             "price": 20,
             "capacity": 500000,
+			"estimate": 450000,
             "assistance": 488005,
 			"likes": []
         },{
@@ -435,6 +463,7 @@
 			"placealt": "Room C",
             "price": 20,
             "capacity": 500000,
+			"estimate": 450000,
             "assistance": 464780,
 			"likes": []
         },{
@@ -450,6 +479,7 @@
 			"placealt": "Room B",
             "price": 20,
             "capacity": 500000,
+			"estimate": 450000,
             "assistance": 421988,
 			"likes": []
         },{
@@ -465,6 +495,7 @@
 			"placealt": "Room F",
             "price": 20,
             "capacity": 500000,
+			"estimate": 450000,
             "assistance": 500000,
 			"likes": []
         },{
@@ -480,6 +511,7 @@
 			"placealt": "Room G",
             "price": 20,
             "capacity": 500000,
+			"estimate": 450000,
             "assistance": 500000,
 			"likes": []
         },{
@@ -495,6 +527,7 @@
 			"placealt": "Paris",
             "price": 10,
             "capacity": 5200,
+			"estimate": 4500,
             "assistance": 3506,
 			"likes": []
         },{
@@ -510,6 +543,7 @@
 			"placealt": "Buenos Aires",
             "price": 2,
             "capacity": 1000,
+			"estimate": 900,
             "assistance": 1000,
 			"likes": []
         },{
@@ -525,6 +559,7 @@
 			"placealt": "Buenos Aires",
             "price": 2,
             "capacity": 1000,
+			"estimate": 900,
             "assistance": 1000,
 			"likes": []
         },{
@@ -540,6 +575,7 @@
 			"placealt": "Athens",
             "price": 10,
             "capacity": 1600,
+			"estimate": 1500,
             "assistance": 1350,
 			"likes": []
         },{
@@ -555,6 +591,7 @@
 			"placealt": "England",
             "price": 8,
             "capacity": 1200,
+			"estimate": 1000,
             "assistance": 980,
 			"likes": []
         }

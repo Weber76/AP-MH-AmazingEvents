@@ -1,22 +1,17 @@
-let fetchURL = "https://mh.up.railway.app/api/amazing-events";
-let pastFetchURL = fetchURL + "?time=past";
-let upcomingFetchURL = fetchURL + "?time=upcoming";
-let categoriesFetchURL = fetchURL + "?category=";
-
 let highestEvents = [];
 let categoriesPast = [];
-
-let innerTablePast = ``;
 
 async function eventsStatsFn() {
   try {
     let capturedElement = document.getElementById("eventsStatsBody");
+    let innerTablePast = ``;
 
-    let dataEvents = await fetch(pastFetchURL).then((response) =>
-      response.json()
-    );
+    let dataEvents = [];
 
-    let attendanceEvents = dataEvents.events.map((each) => {
+    const datosEventos = await consultarJSON(); // fetch.js
+    dataEvents = filtrarJSON(datosEventos, "/past.html"); // filter.js
+
+    let attendanceEvents = dataEvents.map((each) => {
       return {
         name: each.name,
         assistance: each.assistance,
@@ -66,16 +61,16 @@ eventsStatsFn();
 
 async function upcomingEventsStats() {
   try {
-    let innerTableUpcoming = ``;
-    let categoriesUpcoming = [];
-
     let capturedElement = document.getElementById("upcomingStatsBody");
+    let innerTableUpcoming = ``;
 
-    let dataEvents = await fetch(upcomingFetchURL).then((response) =>
-      response.json()
-    );
+    let categoriesUpcoming = [];
+    let dataEvents = [];
 
-    let sortByCategories = dataEvents.events.map((each) => {
+    const datosEventos = await consultarJSON(); // fetch.js
+    dataEvents = filtrarJSON(datosEventos, "/upcoming.html"); // filter.js
+
+    let sortByCategories = dataEvents.map((each) => {
       return {
         name: each.name,
         category: each.category,
@@ -174,17 +169,16 @@ upcomingEventsStats();
 
 async function pastEventsStats() {
   try {
-    let sortByCategories = [];
-
+    let capturedElement = document.getElementById("pastStatsBody");
     let innerTableUpcoming = ``;
 
-    let capturedElement = document.getElementById("pastStatsBody");
+    let sortByCategories = [];
+    let dataEvents = [];
 
-    let dataEvents = await fetch(pastFetchURL).then((response) =>
-      response.json()
-    );
+    const datosEventos = await consultarJSON(); // fetch.js
+    dataEvents = filtrarJSON(datosEventos, "/past.html"); // filter.js
 
-    for (let objectEvent of dataEvents.events) {
+    for (let objectEvent of dataEvents) {
       sortByCategories.push({
         name: objectEvent.name,
         category: objectEvent.category,
